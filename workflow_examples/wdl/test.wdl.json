@@ -1,0 +1,16 @@
+{
+  "align_and_metrics.BWA_Align.sample_name": "NA12878_chr20_ds",
+  "align_and_metrics.BWA_Align.docker_image": "quay.io/ldcabansay/bwa:latest",
+  "align_and_metrics.BWA_Align.bwa_opt": "-M -t",
+  "align_and_metrics.BWA_Align.threads": "4",
+  "align_and_metrics.BWA_Align.read1_fastq": "/Users/louisecabansay/gitOrgs/dockstore-training/data/NA12878_chr20_ds_r1.fq",
+  "align_and_metrics.BWA_Align.read2_fastq": "/Users/louisecabansay/gitOrgs/dockstore-training/data/NA12878_chr20_ds_r2.fq",
+  "align_and_metrics.BWA_Align.ref_fasta": "/Users/louisecabansay/gitOrgs/dockstore-training/data/ref/ref_hg37_chr20.fa",
+  "align_and_metrics.BWA_Align.ref_fasta_fai": "/Users/louisecabansay/gitOrgs/dockstore-training/data/ref/ref_hg37_chr20.fa.fai",
+  "align_and_metrics.BWA_Align.ref_fasta_bwt": "/Users/louisecabansay/gitOrgs/dockstore-training/data/ref/ref_hg37_chr20.fa.bwt",
+  "align_and_metrics.BWA_Align.ref_fasta_sa": "/Users/louisecabansay/gitOrgs/dockstore-training/data/ref/ref_hg37_chr20.fa.sa",
+  "align_and_metrics.BWA_Align.ref_fasta_pac": "/Users/louisecabansay/gitOrgs/dockstore-training/data/ref/ref_hg37_chr20.fa.pac",
+  "align_and_metrics.BWA_Align.ref_fasta_amb": "/Users/louisecabansay/gitOrgs/dockstore-training/data/ref/ref_hg37_chr20.fa.amb",
+  "align_and_metrics.BWA_Align.ref_fasta_ann": "/Users/louisecabansay/gitOrgs/dockstore-training/data/ref/ref_hg37_chr20.fa.ann",
+  "align_and_metrics.Flagstat.docker_image": "quay.io/ldcabansay/samtools:latest"
+}

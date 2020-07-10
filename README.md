@@ -1,1 +1,2 @@
-# bcc-2020-training
+# dockstore-training
+Working space for creating dockstore training materials

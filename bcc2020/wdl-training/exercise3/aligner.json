@@ -1,0 +1,14 @@
+{
+  "align_reads.bwa_align.sample_name": "NA12878_mini",
+  "align_reads.bwa_align.docker_image": "quay.io/ldcabansay/bwa:latest",
+  "align_reads.bwa_align.bwa_opts": "-M -t 4",
+  "align_reads.bwa_align.read1_fastq": "/Users/louisecabansay/gitOrgs/dockstore-training/bcc2020/wdl-training/exercise3/data/NA12878_chr20_ds_r1.fq",
+  "align_reads.bwa_align.read2_fastq": "/Users/louisecabansay/gitOrgs/dockstore-training/bcc2020/wdl-training/exercise3/data/NA12878_chr20_ds_r2.fq",
+  "align_reads.bwa_align.ref_fasta": "/Users/louisecabansay/gitOrgs/dockstore-training/bcc2020/wdl-training/exercise3/data/ref/ref_hg37_chr20.fa",
+  "align_reads.bwa_align.ref_fasta_fai": "/Users/louisecabansay/gitOrgs/dockstore-training/bcc2020/wdl-training/exercise3/data/ref/ref_hg37_chr20.fa.fai",
+  "align_reads.bwa_align.ref_fasta_bwt": "/Users/louisecabansay/gitOrgs/dockstore-training/bcc2020/wdl-training/exercise3/data/ref/ref_hg37_chr20.fa.bwt",
+  "align_reads.bwa_align.ref_fasta_sa": "/Users/louisecabansay/gitOrgs/dockstore-training/bcc2020/wdl-training/exercise3/data/ref/ref_hg37_chr20.fa.sa",
+  "align_reads.bwa_align.ref_fasta_pac": "/Users/louisecabansay/gitOrgs/dockstore-training/bcc2020/wdl-training/exercise3/data/ref/ref_hg37_chr20.fa.pac",
+  "align_reads.bwa_align.ref_fasta_amb": "/Users/louisecabansay/gitOrgs/dockstore-training/bcc2020/wdl-training/exercise3/data/ref/ref_hg37_chr20.fa.amb",
+  "align_reads.bwa_align.ref_fasta_ann": "/Users/louisecabansay/gitOrgs/dockstore-training/bcc2020/wdl-training/exercise3/data/ref/ref_hg37_chr20.fa.ann"
+}

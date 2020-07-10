@@ -1,0 +1,4 @@
+{
+  "metrics.Flagstat.input_sam": "/Users/louisecabansay/gitOrgs/dockstore-training/bcc2020/wdl-training/exercise2/mini.sam",
+  "metrics.Flagstat.docker_image": "quay.io/ldcabansay/samtools:latest"
+}
