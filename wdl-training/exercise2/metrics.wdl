@@ -26,10 +26,10 @@ task flagstat {
 
     # parameterize the samtools flagstat command
     command {
-        samtools flagstat NA1278.sam > NA1278.sam.metrics
+        samtools flagstat mini.sam > mini.sam.metrics
     }
     output{
-        File metrics =  "NA1278.sam.metrics"
+        File metrics =  "mini.sam.metrics"
     }
     # specify a container and any other runtime parameters to set up environment
     runtime {
