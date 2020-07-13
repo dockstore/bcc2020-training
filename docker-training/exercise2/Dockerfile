@@ -1,5 +1,7 @@
 ###################################################
 #Exercise #2a: Writing your first Dockerfile: tabix
+# To build image :
+#
 ###################################################
 # Start with a base image
 FROM { base_image_name }

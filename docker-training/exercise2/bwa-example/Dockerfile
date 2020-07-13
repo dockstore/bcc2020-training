@@ -1,5 +1,7 @@
 #######################################################
 # Dockerfile to build a sample container for bwa
+# To build image:
+#
 #######################################################
 
 # Start with a base image
