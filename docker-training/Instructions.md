@@ -3,10 +3,12 @@ This tutorial will provide you with an introduction to Docker. It is split into 
 
 Note: This training was originally completed on the Instruqt platform. This platform had all of the prerequisites installed.
 
-## Excerise 1
+## Exercise 1
 The Docker CLI is a command-line tool with a whole library of commands for interacting with Docker. This exercise will get you familiar with some of the most common commands and have you running some simple Docker containers.
 
-### Part A - Using Docker
+### Optional Background - Using Docker
+During the training we go through this interactively, but for future reference here are some Docker CLI commands with some explanations.
+
 #### View all available commands using the help option:
 ```shell
 ubuntu$ docker help
@@ -54,7 +56,7 @@ ubuntu$ docker container ls
 ```
 Even though we ran the hello-world docker container, you shouldn't see any output from the above command. This is because hello-world prints the welcome message and then immediately quits. If you had a longer running command (ex. sequence alignment to a reference genome) that may take hours, then you can use this command to view if it is still running.
 
-### Part B - Running Containers
+### Part A - Running Containers
 Running a container can be as simple as one command! In the previous section you used the Docker CLI to run a basic hello-world container. In this section you will try running a slightly more advanced container called whalesay. Whalesay is a program that given some text, will print out an ASCII whale that is saying the text. It is based on a program called cowsay.
 
 The format for the run command is shown below
@@ -71,7 +73,7 @@ ubuntu$ docker run docker/whalesay cowsay hello
 
 This will result in an ASCII whale saying hello! Now try getting the whale to say "Hello [your name]!".
 
-### Part C - Exploring Containers
+### Part B - Exploring Containers
 The two previous Docker containers that we ran performed a function and then quit immediately. This is usually the flow that most bioinformatic tools follow, however sometimes you may want to enter a container and perform many commands.
 
 The Docker run command has two useful flags that can be used.
@@ -105,7 +107,7 @@ Now exit the container by pressing ctrl-D.
 
 You may be wondering, now that we have samtools running in a container, how do I actually get data to it? This will be covered in the next section.
 
-### Part D - Sharing Data with a Container
+### Part C - Exploring Containers (Take home exercise)
 Sharing data with a container is quite straightforward. During the run command, we pass along an extra flag which maps a folder on the host machine to a folder on the container. Note that if the folder does not exist on the container, it will be created.
 
 For simplicity, we will try sharing a simple text file with our whalesay container.
@@ -137,7 +139,7 @@ Exit the container with ctrl-D and then list the contents of ./host-folder. You 
 ubuntu$ cat host-folder/whalesay.txt
 ```
 
-### Part E - Run samtools sort (Take home exercise)
+### Part D - Run samtools sort (Take home exercise)
 As you can see, sharing data between host and container is very useful. Perhaps you have a folder with a BAM file (host-folder/my.bam), and you want to run **samtools sort** on the file. We would use the -v flag to map the host folder with the BAM file to a folder in the container.
 
 You could run the following command to generate a sorted BAM file:
@@ -161,7 +163,6 @@ A [Dockerfile](https://docs.docker.com/engine/reference/builder/) is used to des
 Hints:
 Both Dockerfiles use the same base image.
 Tabix also uses apt for installation.
-You may need to use the -y option for apt commands.
 
 See the solutions folder for the answer to this exercise.
 
