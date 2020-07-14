@@ -33,7 +33,7 @@ From this command you can see there are a lot of subcommands you can make regard
 
 #### Run the official hello-world Docker container from DockerHub:
 ```shell
-ubuntu$ docker container run hello-world
+ubuntu$ docker run hello-world
 ```
 This is just a simple container that confirms that your Docker environment is properly setup. On your first time running this command, you'll notice the following message
 ```shell
@@ -66,7 +66,7 @@ You can check out the [reference documentation](https://docs.docker.com/engine/r
 
 Running whalesay is a bit more complex than hello-world, but not by much. Run whalesay with the following command:
 ```shell
-ubuntu$ docker container run docker/whalesay cowsay hello
+ubuntu$ docker run docker/whalesay cowsay hello
 ```
 
 This will result in an ASCII whale saying hello! Now try getting the whale to say "Hello [your name]!".
@@ -77,11 +77,12 @@ The two previous Docker containers that we ran performed a function and then qui
 The Docker run command has two useful flags that can be used.
 
 _-i_ : keeps STDIN open for interactive use
+
 _-t_ : allocated a terminal
 
 Let us try entering the samtools container and verifying that samtools is installed. [Samtools](http://www.htslib.org/) is "a suite of programs for interacting with high-throughput sequencing data". For this exercise, we will use an image written by [biocontainers](https://biocontainers.pro/). run the following command to enter the container:
 ```shell
-ubuntu$ docker container run -it biocontainers/samtools:v1.9-4-deb_cv1 /bin/bash
+ubuntu$ docker run -it biocontainers/samtools:v1.9-4-deb_cv1 /bin/bash
 ```
 
 The trick here is that the command we ran is **/bin/bash** and the -it. This allows us to enter the shell of the container.
@@ -118,7 +119,7 @@ ubuntu$ echo "Hello world" > host-folder/hello.txt
 
 Now try running whalesay with this shared folder.
 ```shell
-ubuntu$ docker container run -v “$(pwd)”/host-folder:/tmp/container-folder -it docker/whalesay /bin/bash
+ubuntu$ docker run -v “$(pwd)”/host-folder:/tmp/container-folder -it docker/whalesay /bin/bash
 ```
 
 Now list the contents of /tmp/container-folder on the container and you should see hello.txt.
@@ -179,7 +180,7 @@ ubuntu$ docker image ls
 
 Now that we know the ID of the image, we can create a running container. Let's print out the tabix help message to confirm that the container can be run.
 ```shell
-ubuntu$ docker container run [image id] tabix
+ubuntu$ docker run [image id] tabix
 ```
 
 You should see the help message from tabix. Congratulations! You have successfully created and ran your first Dockerfile.
