@@ -45,7 +45,7 @@ See the [part B readings](#part-a-readings) for more information.
 #### Sharing data between host and container
 Here we will map the /root/data on the host machine to /data on the container. Lets confirm that the files in /root/data are available on the container.
 
-First run the container in interactive mode with the folder mounted:
+Run the container in interactive mode with the folder mounted:
 ```shell
 docker run -v /root/data:/data -it quay.io/ldcabansay/samtools
 ```
@@ -59,14 +59,15 @@ You should see many files, including mini.bam. We will be using this file in the
 Now exit the container by typing exit.
 
 #### Convert a SAM file to a BAM file with the samtools container
-Now we will use the samtools Docker container to convert a SAM file to a BAM file. We will use the /data/mini.sam file on the host machine.
-
-The following command will convert our SAM file into a BAM file and store it to /data/mini.bam:
+Run the following command will convert our SAM file (/root/data/mini.sam) into a BAM file and store it to /data/mini.bam:
 ```shell
 docker run -v /root/data:/data quay.io/ldcabansay/samtools samtools view -S -b /data/mini.sam -o /data/mini.bam
 ```
 
 You can confirm that the file is now on the host machine at /root/data by calling ls on the directory or opening the /root/data/mini.bam file. Note that the file will look like gibberish since it is a binary.
+```shell
+ls /root/data
+```
 
 ## Exercise 2
 This exercise will have you writing, building, and running your own Dockerfile.
@@ -144,4 +145,9 @@ samtools --help
 Now exit the container by typing exit.
 
 #### Sharing data between host and container
-With the run command, we can pass along an extra flag which maps a folder on the host machine to a folder on the container.
+With the run command, we can pass along the -v flag to map a folder on the host machine to a folder on the container.
+
+In this example, /root/data is on the host machine and /data is on the container.
+```shell
+docker run -v /root/data:/data ...
+```
