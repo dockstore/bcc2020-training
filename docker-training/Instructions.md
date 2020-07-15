@@ -104,7 +104,10 @@ docker run -v /data:/data biocontainers/samtools:v1.9-4-deb_cv1 samtools view -S
 This exercise will have you writing, building, and running your own Dockerfile.
 
 ### Part A - Writing your first Dockerfile
-A [Dockerfile](https://docs.docker.com/engine/reference/builder/) is used to describe how to create images. Using the Dockerfile for BWA (bwa.Dockerfile) as a guideline, create a Dockerfile for tabix (Dockerfile).
+A [Dockerfile](https://docs.docker.com/engine/reference/builder/) is used to describe how to create images. Using the Dockerfile for BWA as a guideline, create a Dockerfile for tabix by updating the existing Dockerfile.
+
+BWA Dockerfile - /docker-training/exercise2/bwa-example/Dockerfile
+Tabix Dockerfile - /docker-training/exercise2/Dockerfile
 
 Hints:
 Both Dockerfiles use the same base image.
@@ -112,15 +115,17 @@ Tabix also uses apt for installation.
 
 See the solutions folder for the answer to this exercise.
 
-Once you've created the Dockerfile, it is time to build it.
+Once you've created the Dockerfile, it is time to build it. Change into the /docker-training/exercise2 directory and then run the following command.
 ```shell
-docker image build . -t tabix
+docker image build -t tabix .
 ```
+
+The period means to build the Dockerfile in the current directory.
 
 Your Docker image has now been built! The next step is to try running the Docker image.
 
 ### Part B - Try out your new container
-First we must determine the image ID of the image we just created. Run the following command and look for the image called tabix:
+First we must determine the image ID of the image we just created. Run the following command and look for the image called tabix. Copy the content from the Image ID column.
 ```shell
 docker image ls
 ```
@@ -128,6 +133,11 @@ docker image ls
 Now that we know the ID of the image, we can create a running container. Let's print out the tabix help message to confirm that the container can be run.
 ```shell
 docker run [image id] tabix
+```
+
+You can also run the container by referencing the image name and tag.
+```shell
+docker run tabix:latest tabix
 ```
 
 You should see the help message from tabix. Congratulations! You have successfully created and ran your first Dockerfile.
