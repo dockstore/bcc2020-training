@@ -8,14 +8,14 @@ The Docker CLI is a command-line tool with a whole library of commands for inter
 ### Part A - Running Containers
 In this section you will try running a basic container called whalesay. Whalesay is a program that given some text, will print out an ASCII whale that is saying the text. It is based on a program called cowsay.
 
-Running whalesay is a bit more complex than hello-world, but not by much. Run whalesay with the following command:
+Run whalesay with the following command:
 ```shell
 docker run docker/whalesay cowsay hello
 ```
 
 This will result in an ASCII whale saying hello! Now try getting the whale to say "Hello [your name]!".
 ```shell
-docker run docker/whalesay cowsay hello
+docker run docker/whalesay cowsay "fill me in"
  _______ 
 < hello >
  ------- 
@@ -34,57 +34,53 @@ docker run docker/whalesay cowsay hello
 ```
 
 ### Part B - Exploring Containers
-The previous Docker container that we ran performed a function and then quit immediately. This is usually the flow that most bioinformatic tools follow, however sometimes you may want to enter a container and perform many commands.
+We will now try running a [Samtools](http://www.htslib.org/) container to convert SAM to BAM. We will be using our own Docker container found at quay.io/ldcabansay/samtools. First we will look at some concepts.
+* Running containers interactively
+* Sharing data between host and container
 
-The Docker run command has two useful flags that can be used.
+#### Running containers interactively
+To run the container interactively, use the flags -i -t.
 
 _-i_ : keeps STDIN open for interactive use
 
 _-t_ : allocated a terminal
 
-Let us try entering the samtools container and verifying that samtools is installed. [Samtools](http://www.htslib.org/) is "a suite of programs for interacting with high-throughput sequencing data". For this exercise, we will use an image written by [biocontainers](https://biocontainers.pro/).
 
 Run the following command to enter the container:
 ```shell
-docker run -it biocontainers/samtools:v1.9-4-deb_cv1 /bin/bash
+docker run -it quay.io/ldcabansay/samtools
 ```
-
-The trick here is that the command we ran is **/bin/bash** and the **-it**. This allows us to enter the shell of the container.
-
-**To confirm you are in the container, you should see the bash prompt has changed to something like "biodocker@xyz".**
 
 Now that we are inside the container, let's confirm that samtools is installed. Try invoking samtools by displaying help:
 ```shell
 samtools --help
 ```
 
-Awesome! You have now installed samtools without having to worry about running make, updating the PATH, or anything like that.
-
 Now exit the container by pressing ctrl-D.
 
-You may be wondering, now that we have samtools running in a container, how do I actually get data to it? This will be covered in the next section.
+#### Sharing data between host and container
+With the run command, we can pass along an extra flag which maps a folder on the host machine to a folder on the container. In this case we will map the /root/data on the host machine to /data on the container.
 
-### Part C - Exploring Containers (Take home exercise)
-Sharing data with a container is quite straightforward. With the run command, we can pass along an extra flag which maps a folder on the host machine to a folder on the container.
-
-Let's once again use the samtools Docker container to convert a SAM file to a BAM file. We will use the /data/mini.sam file. The mapping that we want is /data on the host machine to the /data in the container. Note these paths do not need match, they just happen to in this example.
-
-First we will confirm that the SAM file is accessible in the docker container.
+Lets confirm that the files in /root/data are available on the container.
 ```shell
-docker run -v /data:/data -it biocontainers/samtools:v1.9-4-deb_cv1 /bin/bash
+docker run -v /root/data:/data -it quay.io/ldcabansay/samtools
 ```
 
 Now that we are inside the samtools container, list the contents of the /data directory.
 ```shell
 ls /data
 ```
+You should see many files, including mini.bam. We will be using this file in the next section.
 
-You should see the contents of the host folder /data now available within the container at /data.
+Now exit the container by pressing ctrl-D.
+
+#### Convert SAM file to BAM with the samtools container
+Now we will  use the samtools Docker container to convert a SAM file to a BAM file. We will use the /data/mini.sam file on the host machine. The mapping that we want is /root/data on the host machine to the /data in the container.
 
 We don't need to enter the container to run commands. We can run from our host machine directly.
 The following command will convert our SAM file into a BAM file and store it to /data/mini.bam:
 ```shell
-docker run -v /data:/data biocontainers/samtools:v1.9-4-deb_cv1 samtools view -S -b /data/mini.sam -o /data/mini.bam
+docker run -v /root/data:/data quay.io/ldcabansay/samtools samtools view -S -b /data/mini.sam -o /data/mini.bam
 ```
 
 ## Exercise 2
