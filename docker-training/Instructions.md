@@ -38,12 +38,12 @@ Now try getting the whale to say "Hello [your name]!".
 
 ### Part B - Exploring Containers
 ---
-We will now try running a [Samtools](http://www.htslib.org/) container to convert SAM to BAM.
+We will now try running a [Samtools](http://www.htslib.org/) container to convert a SAM file to a BAM file.
 
 See the [part B readings](#part-a-readings) for more information.
 
 #### Sharing data between host and container
-Here we will map the /root/data on the host machine to /data on the container. Lets confirm that the files in /root/data are available on the container.
+Here we will map the /root/data on the host machine to **/data** on the container. Lets confirm that the files in **/root/data** are available on the container.
 
 Run the container in interactive mode with the folder mounted:
 ```shell
@@ -59,12 +59,12 @@ You should see many files, including mini.bam. We will be using this file in the
 Now exit the container by typing exit.
 
 #### Convert a SAM file to a BAM file with the samtools container
-Run the following command will convert our SAM file (/root/data/mini.sam) into a BAM file and store it to /data/mini.bam:
+Run the following command will convert our SAM file (**/root/data/mini.sam**) into a BAM file and store it to **/root/data/mini.bam**:
 ```shell
 docker run -v /root/data:/data quay.io/ldcabansay/samtools samtools view -S -b /data/mini.sam -o /data/mini.bam
 ```
 
-You can confirm that the file is now on the host machine at /root/data by calling ls on the directory or opening the /root/data/mini.bam file. Note that the file will look like gibberish since it is a binary.
+You can confirm that the file is now on the host machine at **/root/data** by calling ls on the directory or opening the **/root/data/mini.bam** file. Note that the file will look like gibberish since it is a binary.
 ```shell
 ls /root/data
 ```
@@ -149,5 +149,4 @@ With the run command, we can pass along the -v flag to map a folder on the host 
 
 In this example, /root/data is on the host machine and /data is on the container.
 ```shell
-docker run -v /root/data:/data ...
-```
+docker run -v /root/data:/data quay.io/ldcabansay/samtools samtools
