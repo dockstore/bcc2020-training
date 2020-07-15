@@ -6,16 +6,17 @@ The Docker CLI is a command-line tool with a whole library of commands for inter
 
 
 ### Part A - Running Containers
-In this section you will try running a basic container called whalesay. Whalesay is a program that given some text, will print out an ASCII whale that is saying the text. It is based on a program called cowsay.
+---
+In this section you will try running a basic container called whalesay. See the [part A readings](#part-a-readings) for more information.
 
 Run whalesay with the following command:
 ```shell
 docker run docker/whalesay cowsay hello
 ```
 
-This will result in an ASCII whale saying hello! Now try getting the whale to say "Hello [your name]!".
+This will result in an ASCII whale saying hello!
 ```shell
-docker run docker/whalesay cowsay "fill me in"
+docker run docker/whalesay cowsay "hello"
  _______ 
 < hello >
  ------- 
@@ -33,51 +34,33 @@ docker run docker/whalesay cowsay "fill me in"
 
 ```
 
+Now try getting the whale to say "Hello [your name]!".
+
 ### Part B - Exploring Containers
-We will now try running a [Samtools](http://www.htslib.org/) container to convert SAM to BAM. We will be using our own Docker container found at quay.io/ldcabansay/samtools. First we will look at some concepts.
-* Running containers interactively
-* Sharing data between host and container
+---
+We will now try running a [Samtools](http://www.htslib.org/) container to convert SAM to BAM.
 
-#### Running containers interactively
-To run the container interactively, use the flags -i -t.
-
-_-i_ : keeps STDIN open for interactive use
-
-_-t_ : allocated a terminal
-
-
-Run the following command to enter the container:
-```shell
-docker run -it quay.io/ldcabansay/samtools
-```
-
-Now that we are inside the container, let's confirm that samtools is installed. Try invoking samtools by displaying help:
-```shell
-samtools --help
-```
-
-Now exit the container by pressing ctrl-D.
+See the [part B readings](#part-a-readings) for more information.
 
 #### Sharing data between host and container
-With the run command, we can pass along an extra flag which maps a folder on the host machine to a folder on the container. In this case we will map the /root/data on the host machine to /data on the container.
+Here we will map the /root/data on the host machine to /data on the container. Lets confirm that the files in /root/data are available on the container.
 
-Lets confirm that the files in /root/data are available on the container.
+First run the container in interactive mode with the folder mounted:
 ```shell
 docker run -v /root/data:/data -it quay.io/ldcabansay/samtools
 ```
 
-Now that we are inside the samtools container, list the contents of the /data directory.
+Now that we are inside the samtools container, list the contents of the /data directory:
 ```shell
 ls /data
 ```
 You should see many files, including mini.bam. We will be using this file in the next section.
 
-Now exit the container by pressing ctrl-D.
+Now exit the container by typing exit.
 
-#### Convert SAM file to BAM with the samtools container
-Now we will  use the samtools Docker container to convert a SAM file to a BAM file. We will use the /data/mini.sam file on the host machine. The mapping that we want is /root/data on the host machine to the /data in the container.
+#### Convert a SAM file to a BAM file with the samtools container
+Now we will use the samtools Docker container to convert a SAM file to a BAM file. We will use the /data/mini.sam file on the host machine.
 
-We don't need to enter the container to run commands. We can run from our host machine directly.
 The following command will convert our SAM file into a BAM file and store it to /data/mini.bam:
 ```shell
 docker run -v /root/data:/data quay.io/ldcabansay/samtools samtools view -S -b /data/mini.sam -o /data/mini.bam
@@ -127,3 +110,38 @@ docker run tabix:latest tabix
 ```
 
 You should see the help message from tabix. Congratulations! You have successfully created and ran your first Dockerfile.
+
+# Readings
+There are readings to help with the exercises. Refer here for any questions you may have before asking for help.
+
+## Exercise 1
+### Part A Readings
+Whalesay is a program that given some text, will print out an ASCII whale that is saying the text. It is based on a program called cowsay.
+
+### Part B Readings
+There are two useful concepts needed for this reading.
+* Running containers interactively
+* Sharing data between host and container
+
+#### Running containers interactively
+To run the container interactively, use the flags -i -t.
+
+_-i_ : keeps STDIN open for interactive use
+
+_-t_ : allocated a terminal
+
+
+Run the following command to enter the container:
+```shell
+docker run -it quay.io/ldcabansay/samtools
+```
+
+Now that we are inside the container, let's confirm that samtools is installed. Try invoking samtools by displaying help:
+```shell
+samtools --help
+```
+
+Now exit the container by typing exit.
+
+#### Sharing data between host and container
+With the run command, we can pass along an extra flag which maps a folder on the host machine to a folder on the container.
