@@ -7,7 +7,7 @@ The Docker CLI is a command-line tool with a whole library of commands for inter
 
 ### Part A - Running Containers
 ---
-In this section you will try running a basic container called whalesay. See the [part A readings](#part-a-readings) for more information.
+In this section you will try running a basic container called whalesay. Refer to the [part A readings](#part-a-readings) if you need a refresher on the content taught in the training
 
 Run whalesay with the following command:
 ```shell
@@ -38,12 +38,10 @@ Now try getting the whale to say "Hello [your name]!".
 
 ### Part B - Exploring Containers
 ---
-We will now try running a [Samtools](http://www.htslib.org/) container to convert a SAM file to a BAM file.
-
-See the [part B readings](#part-a-readings) for more information.
+We will now try running a [Samtools](http://www.htslib.org/) container to convert a SAM file to a BAM file. Refer to the [part B readings](#part-b-readings) if you need a refresher on the content taught in the training.
 
 #### Sharing data between host and container
-Here we will map the /root/data on the host machine to **/data** on the container. Lets confirm that the files in **/root/data** are available on the container.
+Here we will map the **/root/data** on the host machine to **/data** on the container. Lets confirm that the files in **/root/data** are available on the container.
 
 Run the container in interactive mode with the folder mounted:
 ```shell
@@ -64,10 +62,12 @@ Run the following command will convert our SAM file (**/root/data/mini.sam**) in
 docker run -v /root/data:/data quay.io/ldcabansay/samtools samtools view -S -b /data/mini.sam -o /data/mini.bam
 ```
 
-You can confirm that the file is now on the host machine at **/root/data** by calling ls on the directory or opening the **/root/data/mini.bam** file. Note that the file will look like gibberish since it is a binary.
+Run the following command to confirm that the file is now on the host machine at **/root/data**:
 ```shell
 ls /root/data
 ```
+
+Note that the file will look like gibberish if you attempt to open it, since it is a binary file.
 
 ## Exercise 2
 This exercise will have you writing, building, and running your own Dockerfile.
@@ -150,3 +150,4 @@ With the run command, we can pass along the -v flag to map a folder on the host 
 In this example, /root/data is on the host machine and /data is on the container.
 ```shell
 docker run -v /root/data:/data quay.io/ldcabansay/samtools samtools
+```
