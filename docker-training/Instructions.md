@@ -1,7 +1,7 @@
 # Docker Training
 This tutorial will provide you with an introduction to Docker. It is split into two parts. First, there is an introduction to the Docker command line. Next, we will have you create and run your very own Dockerfile.
 
-Note: This training was originally completed on the Instruqt platform. This platform had all of the prerequisites installed.
+Note: This training was originally completed on the Instruqt platform. This platform had all of the prerequisites installed. For those not on Instruqt, ensure that you install Docker.
 
 ## Exercise 1
 The Docker CLI is a command-line tool with a whole library of commands for interacting with Docker. This exercise will get you familiar with some of the most common commands and have you running some simple Docker containers.
@@ -57,7 +57,7 @@ ubuntu$ docker container ls
 Even though we ran the hello-world docker container, you shouldn't see any output from the above command. This is because hello-world prints the welcome message and then immediately quits. If you had a longer running command (ex. sequence alignment to a reference genome) that may take hours, then you can use this command to view if it is still running.
 
 ### Part A - Running Containers
-Running a container can be as simple as one command! In the previous section you used the Docker CLI to run a basic hello-world container. In this section you will try running a slightly more advanced container called whalesay. Whalesay is a program that given some text, will print out an ASCII whale that is saying the text. It is based on a program called cowsay.
+In the previous section you used the Docker CLI to run a basic hello-world container. In this section you will try running a slightly more advanced container called whalesay. Whalesay is a program that given some text, will print out an ASCII whale that is saying the text. It is based on a program called cowsay.
 
 The format for the run command is shown below
 ```shell
@@ -72,9 +72,27 @@ ubuntu$ docker run docker/whalesay cowsay hello
 ```
 
 This will result in an ASCII whale saying hello! Now try getting the whale to say "Hello [your name]!".
+```shell
+ubuntu$ docker run docker/whalesay cowsay hello
+ _______ 
+< hello >
+ ------- 
+    \
+     \
+      \     
+                    ##        .            
+              ## ## ##       ==            
+           ## ## ## ##      ===            
+       /""""""""""""""""___/ ===        
+  ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~   
+       \______ o          __/            
+        \    \        __/             
+          \____\______/   
+
+```
 
 ### Part B - Exploring Containers
-The two previous Docker containers that we ran performed a function and then quit immediately. This is usually the flow that most bioinformatic tools follow, however sometimes you may want to enter a container and perform many commands.
+The two previous Docker containers that we ran performed a function and then quit immediately. This is usually the flow that most bioinformatic tools follow, however sometimes you may want to enter a container and perform many commands. Or perhaps you are developing an image and want to test it out.
 
 The Docker run command has two useful flags that can be used.
 
@@ -82,16 +100,18 @@ _-i_ : keeps STDIN open for interactive use
 
 _-t_ : allocated a terminal
 
-Let us try entering the samtools container and verifying that samtools is installed. [Samtools](http://www.htslib.org/) is "a suite of programs for interacting with high-throughput sequencing data". For this exercise, we will use an image written by [biocontainers](https://biocontainers.pro/). run the following command to enter the container:
+Let us try entering the samtools container and verifying that samtools is installed. [Samtools](http://www.htslib.org/) is "a suite of programs for interacting with high-throughput sequencing data". For this exercise, we will use an image written by [biocontainers](https://biocontainers.pro/).
+
+Run the following command to enter the container:
 ```shell
 ubuntu$ docker run -it biocontainers/samtools:v1.9-4-deb_cv1 /bin/bash
 ```
 
 The trick here is that the command we ran is **/bin/bash** and the -it. This allows us to enter the shell of the container.
 
-To confirm you are in the container, you should see the bash prompt has changed to something like "biodocker@xyz". Now that we are inside the container, let's confirm that samtools is installed.
+**To confirm you are in the container, you should see the bash prompt has changed to something like "biodocker@xyz".**
 
-First determine where samtools is installed:
+Now that we are inside the container, let's confirm that samtools is installed. First determine where samtools is installed:
 ```shell
 biodocker@xyz$ which samtools
 ```
