@@ -10,19 +10,19 @@ In this section you will try running a basic container called whalesay. Whalesay
 
 The format for the run command is shown below
 ```shell
-ubuntu$ docker run [-flag options] [registry name]/[path in image repository]:[tag] [arguments]
+docker run [-flag options] [registry name]/[path in image repository]:[tag] [arguments]
 ```
 
 You can check out the [reference documentation](https://docs.docker.com/engine/reference/run/) for the run command to learn more.
 
 Running whalesay is a bit more complex than hello-world, but not by much. Run whalesay with the following command:
 ```shell
-ubuntu$ docker run docker/whalesay cowsay hello
+docker run docker/whalesay cowsay hello
 ```
 
 This will result in an ASCII whale saying hello! Now try getting the whale to say "Hello [your name]!".
 ```shell
-ubuntu$ docker run docker/whalesay cowsay hello
+docker run docker/whalesay cowsay hello
  _______ 
 < hello >
  ------- 
@@ -53,7 +53,7 @@ Let us try entering the samtools container and verifying that samtools is instal
 
 Run the following command to enter the container:
 ```shell
-ubuntu$ docker run -it biocontainers/samtools:v1.9-4-deb_cv1 /bin/bash
+docker run -it biocontainers/samtools:v1.9-4-deb_cv1 /bin/bash
 ```
 
 The trick here is that the command we ran is **/bin/bash** and the -it. This allows us to enter the shell of the container.
@@ -62,12 +62,12 @@ The trick here is that the command we ran is **/bin/bash** and the -it. This all
 
 Now that we are inside the container, let's confirm that samtools is installed. First determine where samtools is installed:
 ```shell
-biodocker@xyz$ which samtools
+which samtools
 ```
 
 Now try invoking samtools by displaying help:
 ```shell
-biodocker@xyz$ samtools --help
+samtools --help
 ```
 
 Awesome! You have now installed samtools without having to worry about running make, updating the PATH, or anything like that.
@@ -84,12 +84,12 @@ The mapping that we want is /data on the host machine to the /data in the contai
 
 First we will confirm that the SAM file is accessible in the docker container.
 ```shell
-ubuntu$ docker run -v /data:/data -it biocontainers/samtools:v1.9-4-deb_cv1 /bin/bash
+docker run -v /data:/data -it biocontainers/samtools:v1.9-4-deb_cv1 /bin/bash
 ```
 
 Now that we are inside the samtools container, list the contents of the /data directory.
 ```shell
-ubuntu$ ls /data
+ls /data
 ```
 
 You should see the contents of the host folder /data now available within the container at /data.
@@ -97,7 +97,7 @@ You should see the contents of the host folder /data now available within the co
 We don't need to enter the container to run commands. We can run from our host machine directly.
 The following command will convert our SAM file into a BAM file and display it to STDOUT:
 ```shell
-ubuntu$ docker run -v /data:/data biocontainers/samtools:v1.9-4-deb_cv1 samtools view -S -b /data/mini.sam -o /data/mini.bam
+docker run -v /data:/data biocontainers/samtools:v1.9-4-deb_cv1 samtools view -S -b /data/mini.sam -o /data/mini.bam
 ```
 
 ## Exercise 2
@@ -114,7 +114,7 @@ See the solutions folder for the answer to this exercise.
 
 Once you've created the Dockerfile, it is time to build it.
 ```shell
-ubuntu$ docker image build . -t tabix
+docker image build . -t tabix
 ```
 
 Your Docker image has now been built! The next step is to try running the Docker image.
@@ -122,12 +122,12 @@ Your Docker image has now been built! The next step is to try running the Docker
 ### Part B - Try out your new container
 First we must determine the image ID of the image we just created. Run the following command and look for the image called tabix:
 ```shell
-ubuntu$ docker image ls
+docker image ls
 ```
 
 Now that we know the ID of the image, we can create a running container. Let's print out the tabix help message to confirm that the container can be run.
 ```shell
-ubuntu$ docker run [image id] tabix
+docker run [image id] tabix
 ```
 
 You should see the help message from tabix. Congratulations! You have successfully created and ran your first Dockerfile.
