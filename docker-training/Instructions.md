@@ -83,6 +83,8 @@ The following command will convert our SAM file into a BAM file and store it to 
 docker run -v /root/data:/data quay.io/ldcabansay/samtools samtools view -S -b /data/mini.sam -o /data/mini.bam
 ```
 
+You can confirm that the file is now on the host machine at /root/data by calling ls on the directory or opening the /root/data/mini.bam file. Note that the file will look like gibberish since it is a binary.
+
 ## Exercise 2
 This exercise will have you writing, building, and running your own Dockerfile.
 
