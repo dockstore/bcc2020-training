@@ -90,7 +90,7 @@ Once you've created the Dockerfile, it is time to build it. Change into the /doc
 docker image build -t tabix .
 ```
 
-The period means to build the Dockerfile in the current directory.
+The period means to use the current directory as the build context. The command will look at the build context location for the Dockerfile by default.
 
 Your Docker image has now been built! The next step is to try running the Docker image.
 
