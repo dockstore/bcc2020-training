@@ -7,7 +7,7 @@ The Docker CLI is a command-line tool with a whole library of commands for inter
 
 ### Part A - Running Containers
 ---
-In this section you will try running a basic container called whalesay. Refer to the [part A readings](#part-a-readings) if you need a refresher on the content taught in the training
+In this section you will try running a basic container called whalesay. Refer to the [part A readings](#part-a-readings) if you need a refresher on the content taught in the training.
 
 Run whalesay with the following command:
 ```shell
@@ -38,17 +38,17 @@ Now try getting the whale to say "Hello [your name]!".
 
 ### Part B - Exploring Containers
 ---
-We will now try running a [Samtools](http://www.htslib.org/) container to convert a SAM file to a BAM file. Refer to the [part B readings](#part-b-readings) if you need a refresher on the content taught in the training.
+We will now try running a container with [Samtools](http://www.htslib.org/) installed to convert a SAM file to a BAM file. Refer to the [part B readings](#part-b-readings) if you need a refresher on the content taught in the training.
 
 #### Sharing data between host and container
-Here we will map the **/root/data** on the host machine to **/data** on the container. Lets confirm that the files in **/root/data** are available on the container.
+Here we will map the **/root/data** on the host machine to **/data** on the container. Then we will confirm that the files in **/root/data** are available on the container.
 
 Run the container in interactive mode with the folder mounted:
 ```shell
 docker run -v /root/data:/data -it quay.io/ldcabansay/samtools
 ```
 
-Now that we are inside the samtools container, list the contents of the /data directory:
+Now that we are inside the samtools container, list the contents of the **/data** directory:
 ```shell
 ls /data
 ```
@@ -119,8 +119,10 @@ There are readings to help with the exercises. Refer here for any questions you 
 ### Part A Readings
 Whalesay is a program that given some text, will print out an ASCII whale that is saying the text. It is based on a program called cowsay.
 
+The docker run command is used to create a running container based on a Docker image. You can read more about the run command from their [official documentation](https://docs.docker.com/engine/reference/run/).
+
 ### Part B Readings
-There are two useful concepts needed for this reading.
+There are two useful concepts needed for this section.
 * Running containers interactively
 * Sharing data between host and container
 
@@ -142,12 +144,12 @@ Now that we are inside the container, let's confirm that samtools is installed. 
 samtools --help
 ```
 
-Now exit the container by typing exit.
+You should see the samtools help printed to the screen. Now exit the container by typing exit.
 
 #### Sharing data between host and container
 With the run command, we can pass along the -v flag to map a folder on the host machine to a folder on the container.
 
-In this example, /root/data is on the host machine and /data is on the container.
+In this example, **/root/data** is on the host machine and **/data** is on the container:
 ```shell
 docker run -v /root/data:/data quay.io/ldcabansay/samtools samtools
 ```
