@@ -1,8 +1,11 @@
-###################################################
-#Exercise #2a: Writing your first Dockerfile: tabix
+######################################################################################
+# Exercise #2a: Writing your first Dockerfile: tabix
 # To build image :
-#
-###################################################
+# from absolute path:
+#   docker image build -f /root/bcc2020-training/docker-training/exercise2/Dockerfile
+# from within the directory containing the dockerfile:
+#   docker image build .
+#######################################################################################
 # Start with a base image
 FROM { base_image_name }
 

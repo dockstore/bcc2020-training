@@ -1,8 +1,12 @@
-#############################################################
-# Dockerfile to build a sample container for samtools
-# To build:
-#
-#############################################################
+##################################################################################
+# Example Dockerfile to build a container for samtools
+# To build image :
+# from absolute path:
+#   docker image build -f /root/bcc2020-training/examples/samtools/Dockerfile
+# from within the directory containing the dockerfile:
+#   docker image build .
+##################################################################################
+
 
 # Set the base image to Ubuntu
 FROM ubuntu:18.04
