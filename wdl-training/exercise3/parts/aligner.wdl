@@ -1,8 +1,11 @@
 ###############################################################################################
-# Exercise3 Example Solution
-# this workflow will...
+# Exercise3 aligner.wdl
+# align a sequence files (FASTQs) to a reference using bwa and produce an alignment file: sam
 
 #launch locally with DockstoreCLI:
+# first move to directory:
+#   cd /root/bcc2020-training/wdl-training/exercise3/parts
+# run workflow:
 #   dockstore workflow launch --local-entry aligner.wdl --json aligner.json
 ###############################################################################################
 

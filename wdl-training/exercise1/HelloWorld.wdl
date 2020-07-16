@@ -1,5 +1,7 @@
 ##############################################################################################
 #launch locally with DockstoreCLI:
+# first move to directory:
+#   cd /root/bcc2020-training/wdl-training/exercise1
 #   dockstore workflow launch --local-entry HelloWorld.wdl --json hello.json
 #launch with cromwell:
 #   java -jar <path to cromwell jar>/cromwell-44.jar run HelloWorld.wdl --inputs hello.json

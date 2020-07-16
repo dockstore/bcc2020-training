@@ -1,5 +1,8 @@
 ##############################################################################################
 #launch locally with DockstoreCLI:
+# first move to directory:
+#   cd /root/bcc2020-training/wdl-training/exercise3/hello_examples
+# run workflow:
 #   dockstore workflow launch --local-entry HelloGoodbye-imports.wdl --json HelloGoodbye.json
 ###############################################################################################
 
