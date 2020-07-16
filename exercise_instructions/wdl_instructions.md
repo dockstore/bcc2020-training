@@ -28,14 +28,45 @@ There are three things to do to complete this exercise (final is optional).
 2. Parameterize the samtools command in the flagstat task
 3. (Optional) If you make any new inputs, be sure to update the metrics.json file in the same directory
 
-There are multiple solutions for this exercise. One can be found at **/root/bcc2020-training/wdl-training/exercise2/solution/** folder.
+To run metrics.wdl:
+
+First navigate to exercise2 director:
+```
+cd /root/bcc2020-training/wdl-training/exercise2
+```
+Then run your metrics.wdl:
+```
+dockstore workflow launch --local-entry metrics.wdl --json metrics.json
+```
+
+There are multiple solutions for this exercise. One can be found at `/root/bcc2020-training/wdl-training/exercise2/solution/`
 
 ## Exercise 3
-For the final exercise we are going to make a workflow that calls two tasks.
-The first task is bwa, an aligner used to align sequence files to a reference. It produces a SAM alignment file.
+For the final exercise we are going to make a workflow that calls two tasks:
+- The first task uses bwa to align FASTQ sequence files to a reference. It produces a SAM alignment file.
+- The second task uses the samtools flagstat (metrics) command to evaulauate an alignment file (sam or bam) and generates statistics about the alignment.
 
-The second task uses the samtools flagstat (metrics) command to evaulauate an alignment file (sam or bam) and produce a report of statistics about the alignment.
+We walked through the two individual workflows for these tasks in `aligner.wdl` and `metrics.wdl` respectively, but now will combine their task into one multi-task workflow.
+You can find these individual workflows and their JSON files in `/root/bcc2020-training/wdl-training/exercise3/parts`
+ 
+There are two ways we can approach this exercise and a skeleton file is provided for each approach:
 
-We walked through the two individual workflows for bwa and metrics, but now will combine them into one workflow. There are two ways we can approach this, either by with or without imports. We will use either the file /**root/bcc2020-training/wdl-training/exercise3/align_and_metrics.wdl** or **/root/bcc2020-training/wdl-training/exercise3/align_and_metrics_imports.wdl**, depending on which approach you choose.
+- without using imports: align_and_metrics.wdl
+- using imports: align_and_metrics_imports.wdl
 
-The solutions to these exercises  can be found in **/root/bcc2020-training/wdl-training/exercise3/solution/** folder. There are solutions for with and without imports.
+To navigate to the exercise3 directory and find the resources:
+```
+cd /root/bcc2020-training/wdl-training/exercise3
+```
+If *not* using imports run align_and_metrics.wdl from the exercise3 directory by:
+```
+dockstore workflow launch --local-entry align_and_metrics.wdl --json align_and_metrics.json
+```
+If using imports run align_and_metrics_imports.wdl from the exercise3 directory by: 
+```
+dockstore workflow launch --local-entry align_and_metrics_imports.wdl --json align_and_metrics.json
+```
+To help you in this exercise, you can find files for the HelloGoodbye examples in: `/root/bcc2020-training/wdl-training/exercise3/hello_examples`
+
+
+Both the import and non-import solutions to exercise3 can be found in: `/root/bcc2020-training/wdl-training/exercise3/solution/`
