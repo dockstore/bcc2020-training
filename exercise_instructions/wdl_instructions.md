@@ -46,9 +46,10 @@ For the final exercise we are going to make a workflow that calls two tasks:
 - The first task uses bwa to align FASTQ sequence files to a reference. It produces a SAM alignment file.
 - The second task uses the samtools flagstat (metrics) command to evaulauate an alignment file (sam or bam) and generates statistics about the alignment.
 
-We walked through the two individual workflows for these tasks in `aligner.wdl` and `metrics.wdl` respectively, but now will combine their task into one multi-task workflow.
+We walked through the two individual workflows for these tasks in `aligner.wdl` and `metrics.wdl` respectively.
 You can find these individual workflows and their JSON files in `/root/bcc2020-training/wdl-training/exercise3/parts`
  
+Now you will combine the individual tasks in the workflows into one single multi-task workflow. 
 There are two ways we can approach this exercise and a skeleton file is provided for each approach:
 
 - without using imports: align_and_metrics.wdl
@@ -58,15 +59,15 @@ To navigate to the exercise3 directory and find the resources:
 ```
 cd /root/bcc2020-training/wdl-training/exercise3
 ```
-If *not* using imports run align_and_metrics.wdl from the exercise3 directory by:
+If *not using* imports run align_and_metrics.wdl from the exercise3 directory by:
 ```
 dockstore workflow launch --local-entry align_and_metrics.wdl --json align_and_metrics.json
 ```
-If using imports run align_and_metrics_imports.wdl from the exercise3 directory by: 
+If *using* imports run align_and_metrics_imports.wdl from the exercise3 directory by: 
 ```
 dockstore workflow launch --local-entry align_and_metrics_imports.wdl --json align_and_metrics.json
 ```
-To help you in this exercise, you can find files for the HelloGoodbye examples in: `/root/bcc2020-training/wdl-training/exercise3/hello_examples`
+To help you in this exercise, you can find the files for the HelloGoodbye examples in: `/root/bcc2020-training/wdl-training/exercise3/hello_examples/`
 
 
 Both the import and non-import solutions to exercise3 can be found in: `/root/bcc2020-training/wdl-training/exercise3/solution/`
