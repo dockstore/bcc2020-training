@@ -13,7 +13,7 @@ cd /root/bcc2020-training/wdl-training/exercise1/
 
 Now run the hello world workflow:
 ```shell
-dockstore workflow launch --local-entry /root/bcc2020-training/HelloWorld.wdl --json hello.json
+dockstore workflow launch --local-entry HelloWorld.wdl --json hello.json
 ```
 
 This will create a file in the current directory called Hello.txt. The contents will be based on the hello.json file.
