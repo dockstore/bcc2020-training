@@ -23,7 +23,7 @@ Now we are going to parameterize a simple workflow. The workflow calls the flags
 
 The file we will be editing is **/root/bcc2020-training/wdl-training/exercise2/metrics.wdl**.
 
-There are three things you must do to complete this exercise.
+There are three things to do to complete this exercise (final is optional).
 1. Set the runtime to use the samtools Docker container: quay.io/ldcabansay/samtools:latest
 2. Parameterize the samtools command in the flagstat task
 3. (Optional) If you make any new inputs, be sure to update the metrics.json file in the same directory
