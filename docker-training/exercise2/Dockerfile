@@ -19,4 +19,4 @@ USER root
 RUN apt update
 
 # install analysis software from package manager
-RUN apt install { software_package_name }
+RUN apt install -y { software_package_name }

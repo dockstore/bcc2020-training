@@ -21,4 +21,4 @@ RUN apt update
 
 # install analysis software from package manager
 # instructions from: https://www.howtoinstall.me/ubuntu/18-04/bwa/
-RUN apt install bwa
+RUN apt install -y bwa
