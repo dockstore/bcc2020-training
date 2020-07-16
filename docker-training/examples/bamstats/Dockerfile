@@ -20,8 +20,7 @@ RUN apt-get -m update && apt-get install -y wget unzip \
 
 # manual software installation from source
 # get the tool and install it in /usr/local/bin
-RUN wget -q http://downloads.sourceforge.net/project
-/bamstats/BAMStats-1.25.zip
+RUN wget -q http://downloads.sourceforge.net/project/bamstats/BAMStats-1.25.zip
 
 # commands/scripts to finish software setup
 RUN unzip BAMStats-1.25.zip && \
