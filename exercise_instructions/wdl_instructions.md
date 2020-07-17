@@ -15,10 +15,9 @@ Now run the hello world workflow:
 ```shell
 dockstore workflow launch --local-entry HelloWorld.wdl --json hello.json
 ```
+Cromwell creates temporary directories to store outputs from a WDL run, this is where you'd find Hello.txt. The identifer for that output will be based on the hello.json file.
 
-This will create a file in a temporary output directory called Hello.txt. The contents will be based on the hello.json file.
-
-The location of this file can be seen in the output provided by the Dockstore CLI. The STDOUT from running the workflow is also stored in `/root/bcc2020-training/wdl-training/exercise2/Cromwell.stdout.txt`, which may be easier to search than your terminal. Look for an "output" object which has a key "metrics.alignment_metrics" which will have the path for the Hello.txt output file.
+The location of this file can be seen in the output provided by the Dockstore CLI and Cromwell. The STDOUT from running the workflow is also stored in `/root/bcc2020-training/wdl-training/exercise2/Cromwell.stdout.txt`, which may be easier to search than your terminal. Look for an "output" object which has a key "metrics.alignment_metrics" which will have the path for the Hello.txt output file.
 
 ## Exercise 2
 Now we are going to parameterize a simple workflow. The workflow calls the flagstat command of the samtools software. It takes a sam file as input and produces alignment statistics.
