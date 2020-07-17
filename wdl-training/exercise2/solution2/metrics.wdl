@@ -4,7 +4,7 @@
 
 #launch locally with DockstoreCLI:
 # first move to directory:
-#   cd /root/bcc2020-training/wdl-training/exercise2/solution
+#   cd /root/bcc2020-training/wdl-training/exercise2/solution2
 # run workflow:
 #   dockstore workflow launch --local-entry metrics.wdl --json metrics.json
 ###############################################################################################
