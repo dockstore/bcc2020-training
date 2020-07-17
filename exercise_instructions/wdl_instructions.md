@@ -69,5 +69,7 @@ dockstore workflow launch --local-entry align_and_metrics_imports.wdl --json ali
 ```
 To help you in this exercise, you can find the files for the HelloGoodbye examples in: `/root/bcc2020-training/wdl-training/exercise3/hello_examples/`
 
+For help with imports:
+[](imports_slide.png)
 
 Both the import and non-import solutions to exercise3 can be found in: `/root/bcc2020-training/wdl-training/exercise3/solution/`
