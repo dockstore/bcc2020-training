@@ -43,7 +43,7 @@ dockstore workflow launch --local-entry metrics.wdl --json metrics.json
 
 There are multiple solutions for this exercise. We provided two solutions that can be found at `/root/bcc2020-training/wdl-training/exercise2/solution/` and `/root/bcc2020-training/wdl-training/exercise2/solution2/`
 
-Solution one uses the WDL standard library function `basename()`, and is slightly more complex. The difference is that solution 1 will name the output file based on the name of the input file, whereas solution 2 will name the output file `sam.metrics`. 
+Solution one uses the WDL standard library function `basename()`, and is slightly more complex. The difference is that solution 1 will name the output file based on the name of the input file, whereas solution 2 will name the output file `mini.sam.metrics`. 
 
 ## Exercise 3
 For the final exercise we are going to make a workflow that calls two tasks:
