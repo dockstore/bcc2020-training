@@ -1,10 +1,10 @@
 ###############################################################################################
-# Exercise3:
+# Exercise3: Multi-task workflow, non-imports version
 # Create a workflow that does two tasks WITHOUT using imports:
 # first aligns FASTQ sequences to a reference and produces a sam file,
 # then generates statistics about the alignment
 
-#launch locally with DockstoreCLI:
+#Run locally with DockstoreCLI:
 # first move to directory:
 #   cd /root/bcc2020-training/wdl-training/exercise3
 # run workflow:
@@ -35,6 +35,7 @@ task bwa_align {
 ## insert bwa task
 
 }
+#define the flagstat task
 task flagstat {
 
 ## insert flagstat task

@@ -1,5 +1,5 @@
 {
-  "align_and_metrics.bwa_align.sample_name": "NA12878_mini",
+  "align_and_metrics.bwa_align.sample_name": "mini",
   "align_and_metrics.bwa_align.docker_image": "quay.io/ldcabansay/bwa:latest",
   "align_and_metrics.bwa_align.bwa_opts": "-M -t 4",
   "align_and_metrics.bwa_align.read1_fastq": "/root/bcc2020-training/data/mini_r1.fq",

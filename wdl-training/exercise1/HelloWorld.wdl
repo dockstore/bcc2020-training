@@ -1,9 +1,12 @@
 ##############################################################################################
-#launch locally with DockstoreCLI:
+#Exercise1: Run HelloWorld.wdl locally with DockstoreCLI:
 # first move to directory:
 #   cd /root/bcc2020-training/wdl-training/exercise1
+
+# run workflow:
 #   dockstore workflow launch --local-entry HelloWorld.wdl --json hello.json
-#launch with cromwell:
+
+#launch with cromwell (for future reference only):
 #   java -jar <path to cromwell jar>/cromwell-44.jar run HelloWorld.wdl --inputs hello.json
 ###############################################################################################
 #set wdl version
@@ -14,7 +17,7 @@ workflow hello_world {
    call hello
    output { File helloFile = hello.outFile }
 }
-#define a task
+#define the 'hello' task
 task hello {
     input {
     File myName

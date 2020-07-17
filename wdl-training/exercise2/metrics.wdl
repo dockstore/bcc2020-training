@@ -5,9 +5,10 @@
 #   -Parameterizing variables in the workflow, particularly the command
 #   -Be sure to update the metrics.json file if applicable to your parameterization
 
-#launch locally with DockstoreCLI:
+#run locally with DockstoreCLI:
 # first move to directory:
 #   cd /root/bcc2020-training/wdl-training/exercise2/
+
 # run workflow:
 #   dockstore workflow launch --local-entry metrics.wdl --json metrics.json
 ###############################################################################################
