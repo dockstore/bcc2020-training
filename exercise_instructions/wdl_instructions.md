@@ -16,7 +16,9 @@ Now run the hello world workflow:
 dockstore workflow launch --local-entry HelloWorld.wdl --json hello.json
 ```
 
-This will create a file in the current directory called Hello.txt. The contents will be based on the hello.json file.
+This will create a file in a temporary output directory called Hello.txt. The contents will be based on the hello.json file.
+
+The location of this file can be seen in the output provided by the Dockstore CLI. The STDOUT from running the workflow is also stored in `/root/bcc2020-training/wdl-training/exercise2/Cromwell.stdout.txt`, which may be easier to search than your terminal. Look for an "output" object which has a key "metrics.alignment_metrics" which will have the path for the Hello.txt output file.
 
 ## Exercise 2
 Now we are going to parameterize a simple workflow. The workflow calls the flagstat command of the samtools software. It takes a sam file as input and produces alignment statistics.
@@ -39,7 +41,9 @@ Then run your metrics.wdl:
 dockstore workflow launch --local-entry metrics.wdl --json metrics.json
 ```
 
-There are multiple solutions for this exercise. One can be found at `/root/bcc2020-training/wdl-training/exercise2/solution/`
+There are multiple solutions for this exercise. We provided two solutions that can be found at `/root/bcc2020-training/wdl-training/exercise2/solution/` and `/root/bcc2020-training/wdl-training/exercise2/solution2/`
+
+Solution one uses the WDL standard library function `basename()`, and is slightly more complex. The difference is that solution 1 will name the output file based on the name of the input file, whereas solution 2 will name the output file `sam.metrics`. 
 
 ## Exercise 3
 For the final exercise we are going to make a workflow that calls two tasks:
