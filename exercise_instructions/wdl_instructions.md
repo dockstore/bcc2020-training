@@ -21,7 +21,7 @@ This will create a file in the current directory called Hello.txt. The contents 
 ## Exercise 2
 Now we are going to parameterize a simple workflow. The workflow calls the flagstat command of the samtools software. It takes a sam file as input and produces alignment statistics.
 
-The file we will be editing is **/root/bcc2020-training/wdl-training/exercise2/metrics.wdl**.
+The file we will be editing is `/root/bcc2020-training/wdl-training/exercise2/metrics.wdl`.
 
 There are three things to do to complete this exercise (final is optional).
 1. Set the runtime to use the samtools Docker container: quay.io/ldcabansay/samtools:latest

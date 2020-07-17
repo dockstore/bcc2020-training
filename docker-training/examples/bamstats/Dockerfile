@@ -1,11 +1,11 @@
-##################################################################################
+################################################################################################
 # Example Dockerfile to build a container for bamstats
 # To build image :
 # from absolute path:
-#   docker image build -f /root/bcc2020-training/examples/bamstats/Dockerfile .
+#   docker image build -f /root/bcc2020-training/docker-training/examples/bamstats/Dockerfile .
 # from within the directory containing the dockerfile:
 #   docker image build .
-##################################################################################
+################################################################################################
 
 # Start with a base image
 FROM ubuntu:14.04
@@ -20,8 +20,7 @@ RUN apt-get -m update && apt-get install -y wget unzip \
 
 # manual software installation from source
 # get the tool and install it in /usr/local/bin
-RUN wget -q http://downloads.sourceforge.net/project
-/bamstats/BAMStats-1.25.zip
+RUN wget -q http://downloads.sourceforge.net/project/bamstats/BAMStats-1.25.zip
 
 # commands/scripts to finish software setup
 RUN unzip BAMStats-1.25.zip && \
