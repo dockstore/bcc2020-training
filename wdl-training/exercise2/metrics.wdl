@@ -37,6 +37,7 @@ task flagstat {
     }
     # specify a container and any other runtime parameters to set up environment
     runtime {
+        # if hard-coded enclose image name in quotes ex: "ubuntu:latest"
         docker: # set me
     }
 }
