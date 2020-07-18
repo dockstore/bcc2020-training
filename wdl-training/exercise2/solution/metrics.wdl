@@ -24,17 +24,15 @@ task flagstat {
         File input_sam
         String docker_image
     }
-    # create a string variable 'stats', basename function from WDL standard library
-    String stats = basename(input_sam) + ".metrics"
     # parameterize the samtools flagstat command
     command {
-        samtools flagstat ${input_sam} > ${stats}
+        samtools flagstat ${input_sam} > mini.sam.metrics
     }
     output{
-        File metrics =  "${stats}"
+        File metrics =  "mini.sam.metrics"
     }
     # specify a container and any other runtime parameters to set up environment
     runtime {
-        docker: docker_image
+        docker: quay.io/ldcabansay/samtools:latest
     }
 }

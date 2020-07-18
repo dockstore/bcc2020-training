@@ -2,9 +2,13 @@
 # Example Dockerfile to build a container for bwa
 # To build image :
 # from absolute path:
-#   docker image build -f /root/bcc2020-training/docker-training/exercise2/bwa-example/Dockerfile .
-# from within the directory containing the dockerfile:
-#   docker image build .
+#   docker build -f /root/bcc2020-training/docker-training/exercise2/bwa-example/Dockerfile .
+
+# Alternatively, to build within the directory containing the dockerfile:
+  # first move to directory:
+#    cd /root/bcc2020-training/docker-training/exercise2/bwa-example
+  # then build image:
+#   docker build .
 ###################################################################################################
 
 # Start with a base image

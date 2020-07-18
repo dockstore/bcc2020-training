@@ -2,9 +2,13 @@
 # Exercise #2a: Writing your first Dockerfile: tabix
 # To build image :
 # from absolute path:
-#   docker image build -t tabix:v10 -f /root/bcc2020-training/docker-training/exercise2/Dockerfile .
-# from within the directory containing the dockerfile:
-#   docker image build -t tabix:v10 .
+#   docker build -t tabix:v10 -f /root/bcc2020-training/docker-training/exercise2/Dockerfile .
+
+# Alternatively, to build within the directory containing the dockerfile:
+  # first move to directory:
+#    cd /root/bcc2020-training/docker-training/exercise2/
+  # then build image:
+#    docker build -t tabix:v1.0
 #######################################################################################################
 # Start with a base image
 FROM { base_image_name }

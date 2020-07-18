@@ -2,9 +2,9 @@
 # Example Dockerfile to build a container for bamstats
 # To build image :
 # from absolute path:
-#   docker image build -f /root/bcc2020-training/docker-training/examples/bamstats/Dockerfile .
+#   docker build -f /root/bcc2020-training/docker-training/examples/bamstats/Dockerfile .
 # from within the directory containing the dockerfile:
-#   docker image build .
+#   docker build .
 ################################################################################################
 
 # Start with a base image

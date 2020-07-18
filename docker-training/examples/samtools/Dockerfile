@@ -2,9 +2,9 @@
 # Example Dockerfile to build a container for samtools
 # To build image :
 # from absolute path:
-#   docker image build -f /root/bcc2020-training/docker-training/examples/samtools/Dockerfile .
+#   docker build -f /root/bcc2020-training/docker-training/examples/samtools/Dockerfile .
 # from within the directory containing the dockerfile:
-#   docker image build .
+#   docker build .
 ##################################################################################
 
 
