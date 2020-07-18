@@ -45,8 +45,8 @@ There are multiple solutions for this exercise. We provided two solutions that c
 
 * Solution2 is slightly more complex. It uses the WDL standard library function `basename()` and uses a parameterized docker_image instead of a hardcoded one. 
 
-The main differences is that solution 2 will name the output file based on the name of the input file, 
-whereas solution 2 will name the output file `mini.sam.metrics`. This along with the parameterized docker_image name will make it easier to repurpose. However, you may want to hardcode the docker image into the descriptor to make things more secure and precisely reproducible.  
+The main differences is that solution2 will name the output file based on the name of the input file, 
+whereas solution 2 will name the output file `mini.sam.metrics`. This along with the parameterized docker_image name will make it easier to repurpose. However, you may still want to hardcode the docker image into the descriptor to make things more secure and precisely reproducible.  
 
 ## Exercise 3
 For the final exercise we are going to make a workflow that calls two tasks:
