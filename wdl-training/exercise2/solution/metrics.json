@@ -1,5 +1,4 @@
 {
     "metrics.flagstat.input_sam": "/root/bcc2020-training/data/mini.sam",
-    "metrics.flagstat.docker_image": "quay.io/ldcabansay/samtools:latest"
   }
   

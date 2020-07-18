@@ -41,8 +41,12 @@ dockstore workflow launch --local-entry metrics.wdl --json metrics.json
 ```
 
 There are multiple solutions for this exercise. We provided two solutions that can be found at `/root/bcc2020-training/wdl-training/exercise2/solution/` and `/root/bcc2020-training/wdl-training/exercise2/solution2/`
+* Solution1 slightly parameterizes the samtools command by feeding it the `input_sam` input parameter instead of the hardcoded filename. 
 
-Solution one uses the WDL standard library function `basename()`, and is slightly more complex. The difference is that solution 1 will name the output file based on the name of the input file, whereas solution 2 will name the output file `mini.sam.metrics`. 
+* Solution2 is slightly more complex. It uses the WDL standard library function `basename()` and uses a parameterized docker_image instead of a hardcoded one. 
+
+The main differences is that solution 2 will name the output file based on the name of the input file, 
+whereas solution 2 will name the output file `mini.sam.metrics`. This along with the parameterized docker_image name will make it easier to repurpose. However, you may want to hardcode the docker image into the descriptor to make things more secure and precisely reproducible.  
 
 ## Exercise 3
 For the final exercise we are going to make a workflow that calls two tasks:
