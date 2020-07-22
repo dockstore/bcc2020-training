@@ -12,8 +12,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-// this workflow will evaulate SAM file and generate statics about the alignment
-
 // define inputs that you want to be available from the start of a process
 // this line creates a 'source channel' called input_sam that can send the file referenced in our nextflow.config file
 input_sam = file(params.input_sam)
