@@ -68,11 +68,11 @@ process flagstat {
 
     // Send out results to flagstat_output_channel.
     output:
-    file "${params.stats}" into flagstat_output_channel
+    file "${input_sam}.metrics" into flagstat_output_channel
 
     // Define the command to be run by process. Note the parameterization.
     """
-    samtools flagstat ${input_sam} > ${params.stats}
+    samtools flagstat ${input_sam} > "${input_sam}.metrics"
     """
 
 }

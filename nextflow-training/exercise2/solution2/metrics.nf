@@ -28,10 +28,10 @@ process flagstat {
     // an output definition starts with an output qualifier, name, the keyword 'into', and then one or more channels over which to send the outputs.
     // The qualifiers can be 'val', 'env', 'file', 'path', 'stdout', and 'tuple'.
     output:
-    file "${params.flagstat_output_name}" into flagstat_output_channel
+    file "${input_sam}.metrics" into flagstat_output_channel
 
     // define the command to be run by this task, note the parameterization of arguments
     """
-    samtools flagstat ${input_sam} > ${params.flagstat_output_name}
+    samtools flagstat ${input_sam} > ${input_sam}.metrics
     """
 }
