@@ -2,7 +2,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Exercise 2: Example Solution
-// this workflow will evaluate SAM file and generate statics about the alignment
+// this workflow will evaluate SAM file and generate statistics about the alignment
 
 // launch locally with Dockstore CLI:
 //   first move to directory:

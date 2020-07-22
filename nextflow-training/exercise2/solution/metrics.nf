@@ -2,7 +2,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Exercise 2: Example Solution
-// this workflow will evaluate SAM file and generate statics about the alignment
+// this workflow will evaluate SAM file and generate statistics about the alignment
 
 // launch locally with Dockstore CLI:
 //   first move to directory:
@@ -12,7 +12,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-// this workflow will evaluate SAM file and generate statics about the alignment
+// this workflow will evaluate SAM file and generate statistics about the alignment
 
 // define inputs that you want to be available from the start of a process
 // this line creates a 'source channel' called input_sam that can send the file referenced in our nextflow.config file
