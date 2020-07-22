@@ -1,5 +1,13 @@
 #!/usr/bin/env nextflow
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+// launch locally with Dockstore CLI:
+//   first move to directory:
+//      cd /root/bcc2020-training/nextflow-training/exercise3/solution/
+// run workflow:
+//   nextflow run align_and_metrics.nf
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 // This will be multi-process workflow example used in the training workshop.
 // Workflow consists of two processes, one using bwa for alignment, the other using samtools flagstat.
 // Each task has also been separated out into individual workflows, see bwa and samtools directories.

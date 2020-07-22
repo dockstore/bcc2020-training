@@ -1,12 +1,25 @@
 #!/usr/bin/env nextflow
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Exercise 2: Example Solution
+// this workflow will evaluate SAM file and generate statics about the alignment
+
+// launch locally with Dockstore CLI:
+//   first move to directory:
+//      cd /root/bcc2020-training/nextflow-training/exercise2/solution2/
+// run workflow:
+//   nextflow run metrics.nf
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
 // this workflow will evaulate SAM file and generate statics about the alignment
 
 // define inputs that you want to be available from the start of a process
 // this line creates a 'source channel' called input_sam that can send the file referenced in our nextflow.config file
 input_sam = file(params.input_sam)
 
-// define the Flagstat process
-process Flagstat {
+// define the flagstat process
+process flagstat {
     // define the inputs required for this process to run
     // an input definition is formatted with an input qualifier, name, the key word 'from', and then the channel the inputs are received from
     // the input qualifier can be 'val', 'env', 'file', 'path', 'stdin', 'tuple', and 'each'

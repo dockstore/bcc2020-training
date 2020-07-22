@@ -1,11 +1,13 @@
 #!/usr/bin/env nextflow
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-// launch locally:
-//   first move to directory:
-//      cd /root/bcc2020-training/nextflow-training/exercise3/hello_examples/HelloWorld
+// Exercise 1: Run HelloWorld.nf locally with Dockstore CLI:
+// first move to directory:
+//   cd /root/bcc2020-training/nextflow-training/exercise1
+
 // run workflow:
 //   nextflow run HelloWorld.nf
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 myName = file(params.myName)
