@@ -6,7 +6,7 @@
 # this tool will run samtools flagstat on an input file
 
 # launch locally with Dockstore CLI:
-#   dockstore tool launch --local-entry metrics.cwl --json metrics.cwl.json
+#   dockstore tool launch --local-entry metrics.cwl --json metrics.json
 ###############################################################################################
 
 class: CommandLineTool
