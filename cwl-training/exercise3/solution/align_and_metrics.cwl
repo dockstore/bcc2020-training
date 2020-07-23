@@ -53,7 +53,7 @@ inputs:
 # The outputs section describes the outputs of the workflow. This is a list of output
 # parameters where each parameter consists of an identifier and a data type.
 # There are two outputs from this workflow, both are files, and one output called
-# 'output_sam' is a file that is produced byt he BWA_Align step.
+# 'output_sam' is a file that is produced byt he bwa_align step.
 outputs:
   output_sam:
     type: File
@@ -172,8 +172,8 @@ steps:
     out:
       [output_sam]
 
-# The second step uses the output of the BWA_Align step as its input and produces
-# and output called flagstat_metrics
+# The second step uses the output of the bwa_align step as its input and produces
+# and output called metrics
   flagstat:
     run:
       class: CommandLineTool
