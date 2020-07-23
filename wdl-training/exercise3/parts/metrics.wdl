@@ -1,7 +1,7 @@
 ###############################################################################################
-# this workflow will evaluate SAM file and generate statics about the alignment
+# this workflow will evaluate SAM file and generate statistics about the alignment
 
-#Run locally with DockstoreCLI:
+#Run locally with Dockstore CLI:
 # first move to directory:
 #   cd /root/bcc2020-training/wdl-training/exercise3/parts
 
