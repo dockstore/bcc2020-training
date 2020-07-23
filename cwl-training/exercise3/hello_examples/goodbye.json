@@ -1,0 +1,6 @@
+{
+  "greeting": {
+        "class": "File",
+        "path": "/root/bcc2020-training/wdl-training/exercise3/hello_examples/name.txt"
+  }
+}

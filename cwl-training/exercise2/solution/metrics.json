@@ -1,0 +1,6 @@
+{
+  "input_sam": {
+        "class": "File",
+        "path": "/root/bcc2020-training/data/mini.sam"
+  }
+}
