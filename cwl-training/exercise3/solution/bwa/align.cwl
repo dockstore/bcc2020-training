@@ -2,10 +2,10 @@
 
 ###############################################################################################
 # Exercise3 Example Solution
-# this tool will...
+# this tool will use BWA to align reads from a fastq file
 
 # launch locally with Dockstore CLI:
-#   dockstore tool launch --local-entry align.cwl --json align.cwl.json
+#   dockstore tool launch --local-entry align.cwl --json align.json
 ###############################################################################################
 #
 # CWL documents are written in YAML and/or JSON.

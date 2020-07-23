@@ -1,8 +1,8 @@
 ###############################################################################################
-# this workflow will...
+# this workflow will print a greeting to a file and a farwell message to another file
 
 # launch locally with Dockstore CLI:
-#   dockstore workflow launch --local-entry HelloGoodbye.cwl --json HelloGoodbye.cwl.json
+#   dockstore workflow launch --local-entry HelloGoodbye.cwl --json HelloGoodbye.json
 ###############################################################################################
 #
 cwlVersion: v1.1

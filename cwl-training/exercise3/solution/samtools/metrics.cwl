@@ -3,10 +3,10 @@
 
 ###############################################################################################
 # Exercise3 Example Solution
-# this tool will...
+# this tool will write statisics for an input (SAM) file to an output file
 
 # launch locally with Dockstore CLI:
-#   dockstore tool launch --local-entry metrics.cwl --json metrics.cwl.json
+#   dockstore tool launch --local-entry metrics.cwl --json metrics.json
 ###############################################################################################
 
 class: CommandLineTool
