@@ -71,91 +71,7 @@ outputs:
 # output called 'output_sam'
 steps:
   bwa_align:
-    run:
-      class: CommandLineTool
-      requirements:
-        DockerRequirement:
-          dockerPull: "quay.io/ldcabansay/bwa:latest"
-        ResourceRequirement:
-          coresMin: 1
-          ramMin: 1024
-          outdirMin: 100000
-        ShellCommandRequirement: {}
-
-        InitialWorkDirRequirement:
-          listing:
-            - $(inputs.ref_fasta)
-            - $(inputs.ref_fasta_fai)
-            - $(inputs.ref_fasta_amb)
-            - $(inputs.ref_fasta_ann)
-            - $(inputs.ref_fasta_bwt)
-            - $(inputs.ref_fasta_pac)
-            - $(inputs.ref_fasta_sa)
-
-      inputs:
-        sample_name:
-          type: string
-          doc: Sample name
-
-        bwa_opt:
-          type: string
-          inputBinding:
-            position: 2
-            shellQuote: false
-          doc: BWA options
-
-        ref_fasta:
-          type: File
-          inputBinding:
-            position: 4
-          doc: Genome reference fasta file.
-
-        ref_fasta_fai:
-          type: File
-          doc: Genome reference bwa index fai.
-
-        ref_fasta_amb:
-          type: File
-          doc: Genome reference bwa index amb.
-
-        ref_fasta_ann:
-          type: File
-          doc: Genome reference bwa index ann.
-
-        ref_fasta_bwt:
-          type: File
-          doc: Genome reference bwa index bwt.
-
-        ref_fasta_pac:
-          type: File
-          doc: Genome reference bwa index pac.
-
-        ref_fasta_sa:
-          type: File
-          doc: Genome reference bwt index sa.
-
-        read1_fastq:
-          type: File
-          inputBinding:
-            position: 11
-          doc: Input first fastq.
-
-        read2_fastq:
-          type: File
-          inputBinding:
-            position: 12
-          doc: Input second fastq.
-
-      stdout: $(inputs.sample_name).sam
-      outputs:
-        output_sam:
-          type: stdout
-          doc: Aligned SAM file.
-
-      # The baseCommand provides the name of program that will actually run
-      baseCommand: [bwa, mem]
-
-
+    run: bwa/align.cwl
     in:
       sample_name: sample_name
       bwa_opt: bwa_opt
@@ -175,31 +91,7 @@ steps:
 # The second step uses the output of the BWA_Align step as its input and produces
 # and output called flagstat_metrics
   flagstat:
-    run:
-      class: CommandLineTool
-      requirements:
-        DockerRequirement:
-          dockerPull: "quay.io/ldcabansay/samtools:latest"
-        ResourceRequirement:
-          coresMin: 1
-          ramMin: 1024
-          outdirMin: 100000
-
-      inputs:
-        input_sam:
-          type: File
-          inputBinding:
-            position: 1
-          doc: SAM file to analyze.
-
-      stdout: $(inputs.input_sam.nameroot).metrics
-      outputs:
-        metrics:
-          type: stdout
-          doc: Metrics on the input SAM file.
-
-      baseCommand: [samtools, flagstat]
-
+    run: samtools/metrics.cwl
     in:
       input_sam: bwa_align/output_sam
     out: [metrics]
