@@ -9,7 +9,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 myName = file(params.myName)
-greeting = file(params.greeting)
 
 process hello_world {
     input:
@@ -26,13 +25,13 @@ process hello_world {
 
  process goodbye_world {
      input:
-     file greeting from greeting
+     file hello from hello_ch
 
      output:
      file "Goodbye.txt" into goodbye_ch
 
      """
-     cat ${greeting} > Goodbye.txt
+     cat $hello > Goodbye.txt
      echo See you later! >> Goodbye.txt
      """
  }
