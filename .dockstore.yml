@@ -61,27 +61,17 @@ workflows:
        - /cwl-training/exercise3/hello_examples/HelloGoodbye.json
      name: HelloGoodbye_cwl
    - subclass: NFL
-     primaryDescriptorPath: /nextflow-training/exercise1/solution/HelloWorld.nf
-     testParameterFiles:
-       - /nextflow-training/exercise1/solution/nextflow.config
+     primaryDescriptorPath: /nextflow-training/exercise1/solution/nextflow.config
      name: HelloWorld_nextflow
    - subclass: NFL
-     primaryDescriptorPath: /nextflow-training/exercise2/solution/metrics.nf
-     testParameterFiles:
-       - /nextflow-training/exercise2/solution/nextflow.config
+     primaryDescriptorPath: /nextflow-training/exercise2/solution/nextflow.config
      name: metrics_nextflow
    - subclass: NFL
-     primaryDescriptorPath: /nextflow-training/exercise3/solution/align_and_metrics.nf
-     testParameterFiles:
-       - /nextflow-training/exercise3/solution/nextflow.config
+     primaryDescriptorPath: /nextflow-training/exercise3/solution/nextflow.config
      name: align_and_metrics_nextflow
    - subclass: NFL
-     primaryDescriptorPath: /nextflow-training/exercise3/hello_examples/GoodbyeWorld/GoodbyeWorld.nf
-     testParameterFiles:
-       - /nextflow-training/exercise3/hello_examples/GoodbyeWorld/nextflow.config
+     primaryDescriptorPath: /nextflow-training/exercise3/hello_examples/GoodbyeWorld/nextflow.config
      name: GoodbyeWorld_nextflow
    - subclass: NFL
-     primaryDescriptorPath: /nextflow-training/exercise3/hello_examples/HelloGoodbye/HelloGoodbye.nf
-     testParameterFiles:
-       - /nextflow-training/exercise3/hello_examples/HelloGoodbye/nextflow.config
+     primaryDescriptorPath: /nextflow-training/exercise3/hello_examples/HelloGoodbye/nextflow.config
      name: HelloGoodbye_nextflow
