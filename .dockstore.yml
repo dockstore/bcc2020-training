@@ -60,6 +60,16 @@ workflows:
      testParameterFiles:
        - /cwl-training/exercise3/solution/align_and_metrics.json
      name: align_and_metrics_imports_cwl
+   - subclass: CWL
+     primaryDescriptorPath: /cwl-training/exercise3/hello_examples/GoodbyeWorld.cwl
+     testParameterFiles:
+       - /cwl-training/exercise3/hello_examples/goodbye.json
+     name: GoodbyeWorld_cwl
+   - subclass: CWL
+     primaryDescriptorPath: /cwl-training/exercise3/hello_examples/HelloGoodbye.cwl
+     testParameterFiles:
+       - /cwl-training/exercise3/hello_examples/HelloGoodbye.json
+     name: HelloGoodbye_cwl     
    - subclass: NFL
      primaryDescriptorPath: /nextflow-training/exercise1/solution/HelloWorld.nf
      testParameterFiles:
