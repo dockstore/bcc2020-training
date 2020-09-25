@@ -41,16 +41,6 @@ workflows:
          - /wdl-training/exercise3/hello_examples/HelloGoodbye.json
      name: HelloGoodbye
    - subclass: CWL
-     primaryDescriptorPath: /cwl-training/exercise1/hello.cwl
-     testParameterFiles:
-         - /cwl-training/exercise1/hello.json
-     name: Hello_cwl
-   - subclass: CWL
-     primaryDescriptorPath: /cwl-training/exercise2/solution/metrics.cwl
-     testParameterFiles:
-         - /cwl-training/exercise2/solution/metrics.json
-     name: metrics_cwl
-   - subclass: CWL
      primaryDescriptorPath: /cwl-training/exercise3/solution/align_and_metrics.cwl
      testParameterFiles:
          - /cwl-training/exercise3/solution/align_and_metrics.json
@@ -69,7 +59,7 @@ workflows:
      primaryDescriptorPath: /cwl-training/exercise3/hello_examples/HelloGoodbye.cwl
      testParameterFiles:
        - /cwl-training/exercise3/hello_examples/HelloGoodbye.json
-     name: HelloGoodbye_cwl     
+     name: HelloGoodbye_cwl
    - subclass: NFL
      primaryDescriptorPath: /nextflow-training/exercise1/solution/HelloWorld.nf
      testParameterFiles:
