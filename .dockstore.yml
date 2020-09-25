@@ -8,10 +8,80 @@ workflows:
    - subclass: WDL
      primaryDescriptorPath: /wdl-training/exercise2/solution2/metrics.wdl
      testParameterFiles:
-         - /wdl-training/exercise2/metrics.json
+         - /wdl-training/exercise2/solution2/metrics.json
      name: metrics
+   - subclass: WDL
+     primaryDescriptorPath: /wdl-training/exercise2/solution/metrics.wdl
+     testParameterFiles:
+         - /wdl-training/exercise2/solution/metrics.json
+     name: metrics_less_parameterized
    - subclass: WDL
      primaryDescriptorPath: /wdl-training/exercise3/solution/align_and_metrics.wdl
      testParameterFiles:
          - /wdl-training/exercise3/solution/align_and_metrics.json
      name: align_and_metrics
+   - subclass: WDL
+     primaryDescriptorPath: /wdl-training/exercise3/solution/align_and_metrics_imports.wdl
+     testParameterFiles:
+         - /wdl-training/exercise3/solution/align_and_metrics.json
+     name: align_and_metrics_imports
+   - subclass: WDL
+     primaryDescriptorPath: /wdl-training/exercise3/hello_examples/GoodbyeWorld.wdl
+     testParameterFiles:
+         - /wdl-training/exercise3/hello_examples/hello.json
+     name: GoodbyeWorld
+   - subclass: WDL
+     primaryDescriptorPath: /wdl-training/exercise3/hello_examples/HelloGoodbye-imports.wdl
+     testParameterFiles:
+         - /wdl-training/exercise3/hello_examples/HelloGoodbye.json
+     name: HelloGoodbye_imports
+   - subclass: WDL
+     primaryDescriptorPath: /wdl-training/exercise3/hello_examples/HelloGoodbye.wdl
+     testParameterFiles:
+         - /wdl-training/exercise3/hello_examples/HelloGoodbye.json
+     name: HelloGoodbye
+   - subclass: CWL
+     primaryDescriptorPath: /cwl-training/exercise1/hello.cwl
+     testParameterFiles:
+         - /cwl-training/exercise1/hello.json
+     name: Hello_cwl
+   - subclass: CWL
+     primaryDescriptorPath: /cwl-training/exercise2/solution/metrics.cwl
+     testParameterFiles:
+         - /cwl-training/exercise2/solution/metrics.json
+     name: metrics_cwl
+   - subclass: CWL
+     primaryDescriptorPath: /cwl-training/exercise3/solution/align_and_metrics.cwl
+     testParameterFiles:
+         - /cwl-training/exercise3/solution/align_and_metrics.json
+     name: align_and_metrics_cwl
+   - subclass: CWL
+     primaryDescriptorPath: /cwl-training/exercise3/solution/align_and_metrics_imports.cwl
+     testParameterFiles:
+       - /cwl-training/exercise3/solution/align_and_metrics.json
+     name: align_and_metrics_imports_cwl
+   - subclass: NFL
+     primaryDescriptorPath: /nextflow-training/exercise1/solution/HelloWorld.nf
+     testParameterFiles:
+       - /nextflow-training/exercise1/solution/nextflow.config
+     name: HelloWorld_nextflow
+   - subclass: NFL
+     primaryDescriptorPath: /nextflow-training/exercise2/solution/metrics.nf
+     testParameterFiles:
+       - /nextflow-training/exercise2/solution/nextflow.config
+     name: metrics_nextflow
+   - subclass: NFL
+     primaryDescriptorPath: /nextflow-training/exercise3/solution/align_and_metrics.nf
+     testParameterFiles:
+       - /nextflow-training/exercise3/solution/nextflow.config
+     name: align_and_metrics_nextflow
+   - subclass: NFL
+     primaryDescriptorPath: /nextflow-training/exercise3/hello_examples/GoodbyeWorld/GoodbyeWorld.nf
+     testParameterFiles:
+       - /nextflow-training/exercise3/hello_examples/GoodbyeWorld/nextflow.config
+     name: GoodbyeWorld_nextflow
+   - subclass: NFL
+     primaryDescriptorPath: /nextflow-training/exercise3/hello_examples/HelloGoodbye/HelloGoodbye.nf
+     testParameterFiles:
+       - /nextflow-training/exercise3/hello_examples/HelloGoodbye/nextflow.config
+     name: HelloGoodbye_nextflow
