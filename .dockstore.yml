@@ -60,6 +60,11 @@ workflows:
      testParameterFiles:
        - /cwl-training/exercise3/hello_examples/HelloGoodbye.json
      name: HelloGoodbye_cwl
+     - subclass: CWL
+     primaryDescriptorPath: cwl-training/exercise1/hello.cwl
+     testParameterFiles:
+         - cwl-training/exercise1/hello.json
+     name: Hello_cwl
    - subclass: NFL
      primaryDescriptorPath: /nextflow-training/exercise1/solution/nextflow.config
      name: HelloWorld_nextflow
