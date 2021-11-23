@@ -63,7 +63,7 @@ workflows:
      - subclass: CWL
      primaryDescriptorPath: cwl-training/exercise1/hello.cwl
      testParameterFiles:
-         - cwl-training/exercise1/hello.json
+       - cwl-training/exercise1/hello.json
      name: Hello_cwl
    - subclass: NFL
      primaryDescriptorPath: /nextflow-training/exercise1/solution/nextflow.config
