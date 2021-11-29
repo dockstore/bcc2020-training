@@ -60,7 +60,7 @@ workflows:
      testParameterFiles:
        - /cwl-training/exercise3/hello_examples/HelloGoodbye.json
      name: HelloGoodbye_cwl
-     - subclass: CWL
+   - subclass: CWL
      primaryDescriptorPath: cwl-training/exercise1/hello.cwl
      testParameterFiles:
        - cwl-training/exercise1/hello.json
