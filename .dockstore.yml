@@ -5,6 +5,7 @@ workflows:
      testParameterFiles:
          - /wdl-training/exercise1/hello.json
      name: HelloWorld
+     publish: true
    - subclass: WDL
      primaryDescriptorPath: /wdl-training/exercise2/solution2/metrics.wdl
      testParameterFiles:
